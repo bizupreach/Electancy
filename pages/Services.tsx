@@ -39,7 +39,7 @@ const ServicePillar: React.FC<{
             <motion.div 
               key={idx} 
               whileHover={{ scale: 1.02 }}
-              className="bg-[#fcfcfc] border border-slate-100 p-6 shadow-sm hover:border-crimson/20 transition-all flex items-start"
+              className="bg-[#fcfcfc] border border-slate-100 p-6 shadow-sm hover:border-crimson/20 transition-all flex items-start h-full"
             >
               <span className="text-crimson font-bold mr-4 text-xs mt-1 tracking-tighter">0{idx + 1}.</span>
               <p className="text-slate-800 text-sm font-medium leading-relaxed">{point}</p>

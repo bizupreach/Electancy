@@ -7,12 +7,12 @@ import HeroVisual from '../components/HeroVisual';
 
 const Home: React.FC = () => {
   const services = [
-    { icon: <Database />, title: "Data Intelligence", desc: "Predictive behavioral analytics and margin analysis across constituencies." },
-    { icon: <Layout />, title: "Campaign Design", desc: "Strategic architecture for end-to-end ground and war-room operations." },
-    { icon: <PenTool />, title: "Narrative Command", desc: "Dominant leadership positioning and meticulous message control." },
-    { icon: <Share2 />, title: "Social Electioneering", desc: "Digital mobilization strategies translated into ground-level electoral gains." },
-    { icon: <BarChart />, title: "Media Analytics", desc: "Real-time ecosystem monitoring and sentiment tracking for rapid response." },
-    { icon: <UserCheck />, title: "Brand Management", desc: "Long-term legacy architecture and proactive reputation protection for leaders." }
+    { icon: <Database />, title: ["Data", "Intelligence"], desc: "Predictive behavioral analytics and margin analysis across constituencies." },
+    { icon: <Layout />, title: ["Campaign", "Design"], desc: "Strategic architecture for end-to-end ground and war-room operations." },
+    { icon: <PenTool />, title: ["Narrative", "Command"], desc: "Dominant leadership positioning and meticulous message control." },
+    { icon: <Share2 />, title: ["Social", "Electioneering"], desc: "Digital mobilization strategies translated into ground-level electoral gains." },
+    { icon: <BarChart />, title: ["Media", "Analytics"], desc: "Real-time ecosystem monitoring and sentiment tracking for rapid response." },
+    { icon: <UserCheck />, title: ["Brand", "Management"], desc: "Long-term legacy architecture and proactive reputation protection for leaders." }
   ];
 
   return (
@@ -59,7 +59,7 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 text-center">
             {[
-              { val: "12+", label: "Elections Won" },
+              { val: "12+", label: "Elections" },
               { val: "34 Cr", label: "Voters Analyzed" },
               { val: "10", label: "Indian States" }
             ].map((stat, i) => (
@@ -94,23 +94,41 @@ const Home: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group bg-white p-12 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+                className="group bg-white p-12 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full"
               >
-                <div className="flex items-center mb-8">
-                  <div className="text-slate-300 group-hover:text-crimson transition-colors duration-500 mr-6">
-                    {/* Fix: cast service.icon to React.ReactElement<any> to resolve TypeScript error with 'size' prop */}
-                    {React.cloneElement(service.icon as React.ReactElement<any>, { size: 40 })}
+                {/* 
+                  Middle Aligned Header:
+                  The icon and the 2-line title are vertically centered (items-center).
+                */}
+                <div className="flex items-center mb-6">
+                  <div className="text-slate-300 group-hover:text-crimson transition-colors duration-500 mr-5 flex-shrink-0">
+                    {React.cloneElement(service.icon as React.ReactElement<any>, { size: 36 })}
                   </div>
-                  <h4 className="text-2xl font-bold text-slate-900 brand-font group-hover:text-crimson transition-colors">
-                    {service.title}
-                  </h4>
+                  <div className="flex-grow">
+                    <h4 className="text-2xl font-bold text-slate-900 brand-font group-hover:text-crimson transition-colors leading-tight">
+                      <span className="block">{service.title[0]}</span>
+                      <span className="block">{service.title[1]}</span>
+                    </h4>
+                  </div>
                 </div>
-                <p className="text-slate-500 leading-relaxed mb-8 font-light text-lg">
-                  {service.desc}
-                </p>
-                <Link to="/services" className="text-crimson font-bold text-xs uppercase tracking-[0.2em] flex items-center group-hover:pl-2 transition-all">
-                  Full Details <ChevronRight size={14} className="ml-2" />
-                </Link>
+                
+                {/* 
+                  Paragraph Alignment:
+                  We use an indent (pl-[56px]) to align the description 
+                  directly under the start of the title text.
+                  (Icon size 36px + Margin Right 20px (mr-5) = 56px)
+                */}
+                <div className="pl-[56px] flex-grow">
+                  <p className="text-slate-500 leading-relaxed mb-8 font-light text-base lg:text-lg">
+                    {service.desc}
+                  </p>
+                </div>
+                
+                <div className="mt-auto pl-[56px]">
+                  <Link to="/services" className="text-crimson font-bold text-xs uppercase tracking-[0.2em] flex items-center group-hover:pl-2 transition-all">
+                    Full Details <ChevronRight size={14} className="ml-2" />
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </div>
