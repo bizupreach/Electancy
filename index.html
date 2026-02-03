@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO Primary -->
+    <title>Electancy | Strategic Political Consulting & Electoral Advisory</title>
+    <meta name="description" content="Electancy is a premier data-driven political consultancy specializing in campaign strategy, ground intelligence, and media management across 10 Indian states." />
+    <meta name="keywords" content="political consulting India, electoral strategy, campaign management, political data analytics, PR for politicians, Electancy" />
+    <link rel="canonical" href="https://electancy.in" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://electancy.in/" />
+    <meta property="og:title" content="Electancy | Strategic Political Consulting" />
+    <meta property="og:description" content="Outcome-oriented political advisory for senior leadership. 12 elections, 10 states, 34 Cr voters." />
+    <meta property="og:image" content="https://electancy.in/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Electancy | Strategic Political Consulting" />
+    <meta property="twitter:description" content="Precision-driven political advisory and media management for leadership that demands results." />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+      :root {
+        --crimson: #8D0000;
+        --navy: #001F3F;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #ffffff;
+        overflow-x: hidden;
+      }
+      h1, h2, h3, h4, .brand-font {
+        font-family: 'Playfair Display', serif;
+      }
+      .bg-crimson { background-color: var(--crimson); }
+      .text-crimson { color: var(--crimson); }
+      .border-crimson { border-color: var(--crimson); }
+      
+      .brand-title {
+        letter-spacing: 0.2em;
+        font-weight: 700;
+      }
+      
+      /* Subtle Grid Background for that "Data" feel */
+      .grid-bg {
+        background-image: linear-gradient(to right, #f1f1f1 1px, transparent 1px),
+                          linear-gradient(to bottom, #f1f1f1 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+
+      /* Transitions */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      canvas {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+    </style>
+
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "react-router-dom": "https://esm.sh/react-router-dom@7.1.3?deps=react@19.0.0,react-dom@19.0.0",
+    "lucide-react": "https://esm.sh/lucide-react@0.468.0?deps=react@19.0.0",
+    "three": "https://esm.sh/three@0.170.0",
+    "framer-motion": "https://esm.sh/framer-motion@11.11.17?deps=react@19.0.0,react-dom@19.0.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Electancy",
+      "url": "https://electancy.in",
+      "logo": "https://electancy.in/logo.png",
+      "description": "Strategic political consulting and electoral advisory for the Indian ecosystem.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New Delhi",
+        "addressCountry": "IN"
+      },
+      "serviceType": "Political Consulting, Voter Research, Data Analytics"
+    }
+    </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
